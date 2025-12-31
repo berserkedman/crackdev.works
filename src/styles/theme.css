@@ -1,3 +1,34 @@
+/* CSS Переменные для тем */
+:root {
+  /* Dark Theme (по умолчанию) */
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #121212;
+  --bg-tertiary: #1a1a1a;
+  --text-primary: #ffffff;
+  --text-secondary: #a0a0a0;
+  --text-tertiary: #6b6b6b;
+  --accent: #3b82f6;
+  --accent-hover: #2563eb;
+  --border: rgba(255, 255, 255, 0.08);
+  --glass-bg: rgba(20, 20, 20, 0.6);
+  --shadow: rgba(0, 0, 0, 0.3);
+}
+
+/* Light Theme - ИСПРАВЛЕНО */
+[data-theme="light"] {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8f9fa;
+  --bg-tertiary: #e9ecef;
+  --text-primary: #1a1a1a;
+  --text-secondary: #495057;
+  --text-tertiary: #6c757d;
+  --accent: #2563eb;
+  --accent-hover: #1d4ed8;
+  --border: rgba(0, 0, 0, 0.1);
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --shadow: rgba(0, 0, 0, 0.08);
+}
+
 /* Плавная смена темы */
 @keyframes theme-wave {
   0% {
@@ -93,6 +124,7 @@
 .fade-in-up {
   animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
+
 /* Убираем подчеркивания у всех ссылок */
 a {
   text-decoration: none;

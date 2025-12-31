@@ -1,134 +1,145 @@
 .hero-section {
-  position: relative;
   min-height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  padding: 0 20px;
+  padding: 120px 0 80px;
 }
 
 .hero-content {
-  position: relative;
-  z-index: 10;
-  text-align: center;
-  max-width: 1200px;
+  max-width: 800px;
 }
 
 .hero-badge {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 10px 20px;
-  background: rgba(0, 212, 255, 0.1);
-  border: 1px solid rgba(0, 212, 255, 0.3);
-  border-radius: 50px;
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--primary);
-  margin-bottom: 30px;
-  backdrop-filter: blur(10px);
+  padding: 8px 16px;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-bottom: 32px;
 }
 
-.badge-icon {
-  font-size: 16px;
-  animation: float 2s ease-in-out infinite;
+.badge-dot {
+  width: 8px;
+  height: 8px;
+  background: #22c55e;
+  border-radius: 50%;
+  animation: pulse 2s ease-in-out infinite;
 }
 
-.hero-titles {
-  margin-bottom: 20px;
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.hero-title {
+  font-size: clamp(36px, 6vw, 64px);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+  color: var(--text-primary); /* ИСПРАВЛЕНО: был серый */
 }
 
 .hero-subtitle {
-  font-size: clamp(1rem, 2vw, 1.25rem);
-  color: var(--text-secondary);
-  margin-bottom: 40px;
-  font-weight: 400;
+  font-size: clamp(20px, 3vw, 28px);
+  font-weight: 500;
+  color: var(--text-primary); /* ИСПРАВЛЕНО */
+  margin-bottom: 32px;
 }
 
-.hero-cta {
+.hero-description {
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  margin-bottom: 40px;
+}
+
+.hero-description strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.hero-list {
+  list-style: none;
+  margin: 20px 0;
+  padding: 0;
+}
+
+.hero-list li {
+  position: relative;
+  padding-left: 24px;
+  margin-bottom: 12px;
+  color: var(--text-primary); /* ИСПРАВЛЕНО */
+}
+
+.hero-list li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.hero-tech {
+  margin: 24px 0;
+  padding: 20px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  color: var(--text-primary); /* ИСПРАВЛЕНО */
+}
+
+.hero-features {
   display: flex;
-  gap: 20px;
-  justify-content: center;
-  align-items: center;
+  gap: 24px;
+  margin: 24px 0;
   flex-wrap: wrap;
 }
 
-.btn-ghost {
-  padding: 14px 32px;
-  background: transparent;
-  color: var(--primary);
-  border: 2px solid var(--primary);
-  border-radius: 12px;
-  font-size: 16px;
-  font-weight: 600;
-  transition: all 0.3s ease;
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text-primary);
 }
 
-.btn-ghost:hover {
-  background: var(--primary);
-  color: var(--bg-dark);
-  transform: scale(1.05);
+.feature-icon {
+  font-size: 18px;
 }
 
-.btn-arrow {
-  display: inline-block;
-  margin-left: 8px;
-  transition: transform 0.3s ease;
+.hero-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 
-.glow-btn:hover .btn-arrow {
-  transform: translateX(5px);
-}
-
-/* Плавающие орбы */
-.floating-orbs {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  pointer-events: none;
-  z-index: 1;
-}
-
-.orb {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(60px);
-}
-
-.orb-1 {
-  width: 300px;
-  height: 300px;
-  background: radial-gradient(circle, rgba(0,212,255,0.3) 0%, transparent 70%);
-  top: 20%;
-  left: 10%;
-}
-
-.orb-2 {
-  width: 400px;
-  height: 400px;
-  background: radial-gradient(circle, rgba(168,85,247,0.25) 0%, transparent 70%);
-  top: 50%;
-  right: 10%;
-}
-
-.orb-3 {
-  width: 250px;
-  height: 250px;
-  background: radial-gradient(circle, rgba(0,102,255,0.2) 0%, transparent 70%);
-  bottom: 20%;
-  left: 50%;
+.hero-actions .btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 @media (max-width: 768px) {
-  .hero-cta {
+  .hero-section {
+    padding: 100px 0 60px;
+  }
+
+  .hero-actions {
     flex-direction: column;
   }
-  
-  .glow-btn, .btn-ghost {
+
+  .hero-actions .btn {
     width: 100%;
-    max-width: 300px;
+    justify-content: center;
   }
 }

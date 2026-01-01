@@ -8,8 +8,6 @@ import { ProjectsGrid } from './components/home/ProjectsGrid';
 import { AboutSection } from './components/home/AboutSection';
 import { ProjectPage } from './components/project/ProjectPage';
 import { AdminPanel } from './components/admin/AdminPanel';
-import './styles/global.css';
-import './styles/theme.css';
 
 const HomePage = () => (
   <>
@@ -22,19 +20,17 @@ const HomePage = () => (
 function App() {
   return (
     <Router>
-      <div className="app">
-        <BackgroundEffect />
-        <Navigation />
-        <ThemeToggle />
-        
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/project/:id" element={<ProjectPage />} />
-        </Routes>
-        
-        <Footer />
-        <AdminPanel />
-      </div>
+      <BackgroundEffect />
+      <Navigation />
+      <ThemeToggle />
+      
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/project/:id" element={<ProjectPage />} />
+        <Route path="/admin" element={<AdminPanel />} />
+      </Routes>
+      
+      <Footer />
     </Router>
   );
 }
